@@ -1,0 +1,22 @@
+#  configuration template for application TimeSheet. 
+#  private config file must be namend TimeSheet.AppConfiguration.private.toml
+#
+#  public class CurrentConfiguration
+#  {
+#    public string ExchangeServerUri { get; set; }
+#    public string Username { get; set; }
+#    public string Password { get; set; }
+#    public string[] ProjectList { get; set; }
+#    public string[] CalendarList { get; set; }
+#    public string Path { get; set; }
+#    public ExchangeCalendarItemCompareStrategy Strategy { get; set; }
+#  }
+
+
+ExchangeServerUri = "https://outlook.office365.com/EWS/Exchange.asmx"   #Localtion of Exchange Web Services
+Username = "john@doe.com"                           #Login Name on exchange server, usually email address, or Domain\Username in Active Directory
+Password = "secrtepwd"                              #Password on exchange server a.k.a. Password of User in Active Directory
+ProjectList = ["Project1", "Project2", "Project3"]  #Presets for ComboBox in Gui for selecting Subject in Calendar Items
+CalendarList = ["Calendar", "Projects"]             #Calendar folder to be searched if not present: All calendars are scanned
+Strategy = "AcceptAll"                              #String search strategy in Subject of Calendar Item AcceptAll, Equals, StartsWith, Contains. AcceptAll ignores ProjectList entry 
+                                                    #and simply delivers all calendar entries
